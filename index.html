@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>maren osei</title>
+<meta name="description" content="Maren Osei is a curator and audio producer in Pittsburgh. Podcasts, exhibitions, and community programs.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Maren Osei">
+<meta property="og:description" content="Curator and audio producer in Pittsburgh. Podcasts, exhibitions, and community programs.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%236a2cff'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='white' font-family='Georgia,serif'%3EM%3C/text%3E%3C/svg%3E">
+<noscript><style>.page { display: block !important; margin-bottom: 48px; }</style></noscript>
+<style>
+  * { box-sizing: border-box; }
+
+  /* ---------- color profiles (switch with the "skin" dots in the footer) ---------- */
+  :root {
+    --bg: #f4eeff;
+    --surface: #ffffff;
+    --ink: #17102b;
+    --muted: #64588a;
+    --line: #dccffa;
+    --accent: #6a2cff;
+    --accent2: #ff3d9a;
+    --accent3: #ffe14d;
+    --accent-ink: #5a1fe0;
+    --on-accent: #ffffff;
+    --on-accent2: #17102b;
+    --on-accent3: #17102b;
+    --visited: #8a3fb8;
+    --radius: 14px;
+  }
+  body[data-theme="aqua"] {
+    --bg: #e2f8fc;
+    --surface: #ffffff;
+    --ink: #06293a;
+    --muted: #4a7384;
+    --line: #b9e4ee;
+    --accent: #0086b3;
+    --accent2: #ff5a1f;
+    --accent3: #5cecd5;
+    --accent-ink: #00708f;
+    --on-accent: #ffffff;
+    --on-accent2: #06293a;
+    --on-accent3: #06293a;
+    --visited: #0a5e8c;
+  }
+  body[data-theme="pittsburgh"] {
+    --bg: #fff8d8;
+    --surface: #fffef7;
+    --ink: #141414;
+    --muted: #5c5640;
+    --line: #efdf9c;
+    --accent: #ffb612;
+    --accent2: #1c1c1c;
+    --accent3: #ffe27a;
+    --accent-ink: #946300;
+    --on-accent: #141414;
+    --on-accent2: #ffffff;
+    --on-accent3: #141414;
+    --visited: #7a3fb0;
+  }
+  body[data-theme="zine"] {
+    --bg: #0f0f16;
+    --surface: #1a1a25;
+    --ink: #f4f0e6;
+    --muted: #aaa6bb;
+    --line: #2d2d3d;
+    --accent: #b6ff3b;
+    --accent2: #ff2e93;
+    --accent3: #35e0ff;
+    --accent-ink: #b6ff3b;
+    --on-accent: #0b0b0b;
+    --on-accent2: #0b0b0b;
+    --on-accent3: #0b0b0b;
+    --visited: #c58bff;
+  }
+
+  [hidden] { display: none !important; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .mono { font-family: "Courier New", Courier, monospace; }
+  a { color: var(--ink); }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- header ---------- */
+  .site-header {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--bg);
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .header-inner {
+    max-width: 1240px; margin: 0 auto; padding: 12px 28px;
+    display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap;
+  }
+  .site-header a, .site-header a:visited { color: var(--ink); text-decoration: none; }
+  .logo {
+    font-family: "Courier New", Courier, monospace; font-weight: bold; letter-spacing: 1px;
+    border: 2px solid var(--ink); padding: 3px 10px; box-shadow: 3px 3px 0 var(--accent);
+    transition: transform .12s, box-shadow .12s;
+  }
+  .logo:hover { transform: translate(-1px,-1px); box-shadow: 4px 4px 0 var(--accent); }
+  .site-header nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 4px; flex-wrap: wrap; align-items: center; }
+  .site-header nav a { display: block; padding: 6px 14px; border-radius: 999px; font-size: 16px; }
+  .site-header nav a:hover { background: color-mix(in srgb, var(--ink) 8%, transparent); }
+  .site-header nav a[aria-current="page"], .site-header nav a[aria-current="page"]:visited { background: var(--ink); color: var(--bg); }
+  .menu-btn {
+    font: inherit; font-size: 16px; color: var(--ink); background: transparent; border: 0; cursor: pointer;
+    padding: 6px 14px; border-radius: 999px; display: flex; align-items: center; gap: 6px;
+  }
+  .menu-btn:hover { background: color-mix(in srgb, var(--ink) 8%, transparent); }
+  .menu-btn.is-current { background: var(--ink); color: var(--bg); }
+  .menu-btn .chev { font-size: 11px; transition: transform .15s; }
+  .has-menu.open .chev { transform: rotate(180deg); }
+  .has-menu { position: relative; }
+  .site-header nav .submenu {
+    display: none; flex-direction: column; gap: 2px; flex-wrap: nowrap;
+    position: absolute; top: calc(100% + 8px); left: 0; z-index: 30;
+    min-width: 250px; max-width: calc(100vw - 36px); padding: 8px;
+    background: var(--surface); border: 2px solid var(--ink); border-radius: 14px; box-shadow: 6px 6px 0 var(--accent);
+  }
+  .submenu:before { content: ""; position: absolute; left: 0; right: 0; top: -12px; height: 12px; }
+  .has-menu.open .submenu { display: flex; }
+  .site-header nav .submenu a { border-radius: 8px; padding: 10px 14px; }
+  .site-header nav .submenu a:hover { background: var(--accent3); color: var(--on-accent3); }
+  .site-header nav .submenu a small { display: block; font-family: "Courier New", Courier, monospace; font-size: 11px; opacity: .75; margin-top: 1px; }
+  .site-header nav a.cta { border: 1.5px solid var(--ink); margin-left: 6px; }
+  .site-header nav a.cta:hover { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+  .site-header nav a.cta[aria-current="page"] { background: var(--ink); border-color: var(--ink); }
+
+  /* ---------- pages ---------- */
+  main { padding: 48px 0 24px 0; }
+  .page { display: none; }
+  .page:focus { outline: none; }
+  .page.active { display: block; animation: rise .35s ease both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+  .eyebrow {
+    display: inline-block; font-family: "Courier New", Courier, monospace; font-size: 13px; letter-spacing: .3px;
+    background: var(--accent3); color: var(--on-accent3); border: 1.5px solid var(--ink); border-radius: 4px;
+    padding: 2px 10px; margin: 0 0 16px 0;
+  }
+  .eyebrow:before { content: "~/"; opacity: .6; }
+  h1 { font-size: clamp(34px, 5.2vw, 62px); line-height: 1.06; letter-spacing: -0.02em; margin: 0 0 18px 0; font-weight: normal; }
+  h1 em { font-style: italic; color: var(--accent-ink); }
+  h2 { font-size: 28px; font-weight: normal; letter-spacing: -0.01em; margin: 0; }
+  h3 { font-weight: normal; }
+  .sub { font-size: clamp(18px, 2vw, 22px); color: var(--muted); max-width: 60ch; margin: 0 0 24px 0; }
+
+  .section { margin-top: 72px; }
+  .section-head { display: flex; align-items: center; gap: 16px; margin-bottom: 26px; }
+  .section-head:after { content: ""; flex: 1; border-bottom: 2px dotted var(--muted); border-bottom: 2px dotted color-mix(in srgb, var(--ink) 35%, transparent); }
+  .section-head h2 {
+    display: inline-block; font-size: 26px; line-height: 1.2; padding: 4px 16px;
+    border: 2px solid var(--ink); border-radius: 8px;
+    background: var(--accent3); color: var(--on-accent3);
+    box-shadow: 4px 4px 0 var(--ink); transform: rotate(-0.8deg);
+  }
+  .section-head h2.c-a { background: var(--accent); color: var(--on-accent); }
+  .section-head h2.c-b { background: var(--accent2); color: var(--on-accent2); }
+  .section-note { max-width: 62ch; color: var(--muted); margin: -8px 0 22px 0; }
+
+  .btn, .btn:visited {
+    display: inline-block; text-decoration: none; font-size: 16px;
+    padding: 11px 22px; border-radius: 999px; border: 1.5px solid var(--ink);
+    background: var(--accent); color: var(--on-accent); border-color: var(--accent);
+    transition: transform .12s, box-shadow .12s;
+    margin: 0 8px 8px 0;
+  }
+  .btn:hover { transform: translate(-2px,-2px); box-shadow: 3px 3px 0 var(--ink); }
+  .btn.ghost, .btn.ghost:visited { background: transparent; color: var(--ink); border-color: var(--ink); }
+
+  .prose p { max-width: 64ch; margin: 0 0 16px 0; }
+  .prose a:visited { color: var(--visited); }
+
+  /* ---------- retro bits ---------- */
+  .status {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-family: "Courier New", Courier, monospace; font-size: 13px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
+    padding: 6px 12px; margin-bottom: 22px;
+  }
+  .status .dot { width: 8px; height: 8px; border-radius: 50%; background: #2fd36b; box-shadow: 0 0 0 0 rgba(47,211,107,.6); animation: pulse 2s infinite; }
+  @keyframes pulse { 70% { box-shadow: 0 0 0 7px rgba(47,211,107,0); } 100% { box-shadow: 0 0 0 0 rgba(47,211,107,0); } }
+  .cursor { animation: blink 1.05s step-start infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .sticker {
+    position: absolute; top: -14px; right: -14px; transform: rotate(8deg);
+    background: var(--accent3); color: #000; border: 2px solid #000;
+    font-family: "Courier New", Courier, monospace; font-weight: bold; font-size: 13px;
+    padding: 5px 10px; box-shadow: 3px 3px 0 #000;
+  }
+  .new-tag {
+    position: absolute; top: 10px; right: 10px; transform: rotate(4deg);
+    background: var(--accent3); color: #000; border: 1px solid #000;
+    font-family: "Courier New", Courier, monospace; font-weight: bold; font-size: 10px; padding: 2px 6px;
+  }
+
+  /* ---------- generated artwork tiles (swap for <img> when you have real images) ---------- */
+  .tile { position: relative; aspect-ratio: 4 / 3; border-bottom: 1px solid var(--line); overflow: hidden; }
+  .tile.wide { aspect-ratio: 16 / 11; }
+  .tile .chip {
+    position: absolute; left: 10px; bottom: 10px;
+    background: var(--surface); color: var(--ink); border: 1px solid var(--ink); border-radius: 4px;
+    font-family: "Courier New", Courier, monospace; font-size: 11px; padding: 2px 7px;
+  }
+  .tile img, .portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .tile .chip, .tile .new-tag, .portrait .cap { z-index: 1; }
+  .a1 { background: repeating-linear-gradient(45deg, var(--accent) 0 12px, var(--accent3) 12px 24px); }
+  .a2 { background: radial-gradient(circle, var(--accent3) 0 26%, transparent 28%) 0 0 / 30px 30px, var(--accent2); }
+  .a3 { background: repeating-radial-gradient(circle at 30% 70%, var(--accent) 0 9px, var(--accent3) 9px 18px); }
+  .a4 { background: linear-gradient(var(--ink) 2px, transparent 2px) 0 0 / 26px 26px, linear-gradient(90deg, var(--ink) 2px, transparent 2px) 0 0 / 26px 26px, var(--accent3); }
+  .a5 { background: conic-gradient(var(--accent) 25%, var(--accent3) 0 50%, var(--accent) 0 75%, var(--accent3) 0) 0 0 / 44px 44px; }
+  .a6 { background: repeating-radial-gradient(circle at 50% 130%, var(--accent2) 0 8px, var(--bg) 8px 16px); }
+  .a7 { background: linear-gradient(135deg, var(--accent) 50%, var(--accent2) 50%); }
+  .a8 { background: repeating-conic-gradient(from 0deg at 50% 100%, var(--accent) 0 9deg, var(--accent3) 9deg 18deg); }
+  .a9 { background: repeating-linear-gradient(90deg, var(--accent2) 0 6px, transparent 6px 16px), var(--accent3); }
+  .a10 { background: radial-gradient(circle at 22% 30%, var(--accent2) 0 30%, transparent 31%), radial-gradient(circle at 76% 68%, var(--accent3) 0 28%, transparent 29%), var(--accent); }
+
+  /* ---------- cards ---------- */
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .grid-projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(262px, 1fr)); gap: 20px; }
+  .card, .card:visited {
+    position: relative; display: flex; flex-direction: column;
+    background: var(--surface); color: var(--ink);
+    border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; text-decoration: none;
+    transition: transform .15s, box-shadow .15s, border-color .15s;
+  }
+  .card:hover { transform: translate(-3px,-3px); box-shadow: 6px 6px 0 var(--accent); border-color: var(--ink); }
+  .card-body { padding: 14px 18px 20px 18px; }
+  .card h3 { margin: 0 0 4px 0; font-size: 21px; line-height: 1.2; }
+  .card p { margin: 0 0 10px 0; color: var(--muted); font-size: 15px; line-height: 1.45; }
+  .meta { font-family: "Courier New", Courier, monospace; font-size: 12px; color: var(--muted); }
+  .card .arrow { position: absolute; top: 12px; left: 12px; }
+
+  /* filter chips */
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 24px 0; align-items: center; }
+  .filters button {
+    font-family: "Courier New", Courier, monospace; font-size: 13px;
+    background: transparent; color: var(--ink);
+    border: 1.5px solid var(--ink); border-radius: 999px; padding: 6px 14px; cursor: pointer;
+  }
+  .filters button:hover { background: color-mix(in srgb, var(--ink) 8%, transparent); }
+  .filters button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+  .filters .count { margin-left: auto; font-family: "Courier New", Courier, monospace; font-size: 12px; color: var(--muted); }
+
+  /* ---------- about ---------- */
+  .hero { display: grid; grid-template-columns: 1fr 340px; gap: 56px; align-items: center; }
+  .portrait-wrap { position: relative; }
+  .portrait { aspect-ratio: 4 / 5; border-radius: 20px; border: 2px solid var(--ink); position: relative; overflow: hidden; box-shadow: 8px 8px 0 var(--accent); }
+  .portrait .cap {
+    position: absolute; left: 12px; bottom: 12px; right: 12px;
+    background: var(--surface); border: 1px solid var(--ink); border-radius: 4px;
+    font-family: "Courier New", Courier, monospace; font-size: 11px; padding: 3px 8px; text-align: center;
+  }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  .how { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .how > div { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
+  .how .glyph {
+    width: 38px; height: 38px; display: grid; place-items: center; border-radius: 10px;
+    background: var(--accent); color: var(--on-accent); font-size: 20px; margin-bottom: 12px;
+  }
+  .how > div:nth-child(2) .glyph { background: var(--accent2); color: var(--on-accent2); }
+  .how > div:nth-child(3) .glyph { background: var(--accent3); color: var(--on-accent3); }
+  .how h3 { margin: 0 0 6px 0; font-size: 20px; }
+  .how p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  .cv .row { display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding: 12px 0; border-top: 1px solid var(--line); }
+  .cv .row:last-child { border-bottom: 1px solid var(--line); }
+  .cv .yr { font-family: "Courier New", Courier, monospace; font-size: 13px; color: var(--muted); padding-top: 3px; }
+  .cv .what small { display: block; color: var(--muted); font-size: 14px; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .tags span { font-family: "Courier New", Courier, monospace; font-size: 12px; border: 1px solid var(--ink); border-radius: 999px; padding: 3px 11px; background: var(--surface); }
+
+  .press { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .press a, .press a:visited {
+    display: block; text-decoration: none; padding: 16px 18px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); color: var(--ink);
+    transition: transform .15s, box-shadow .15s, border-color .15s;
+  }
+  .press a:hover { transform: translate(-2px,-2px); box-shadow: 4px 4px 0 var(--accent); border-color: var(--ink); }
+  .press a:visited .t { color: var(--visited); }
+  .press .meta { display: block; margin-bottom: 4px; }
+  .press .t { font-size: 18px; line-height: 1.3; }
+
+  /* ---------- for hire ---------- */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .step { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
+  .step .n { font-family: "Courier New", Courier, monospace; font-size: 34px; color: var(--accent-ink); line-height: 1; margin-bottom: 10px; }
+  .step h3 { margin: 0 0 6px 0; font-size: 20px; }
+  .step p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  .offer { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+  .offer h3 { margin: 0 0 4px 0; font-size: 22px; }
+  .offer .meta { display: block; margin-bottom: 10px; color: var(--accent-ink); }
+  .offer p { margin: 0; color: var(--muted); font-size: 15px; }
+  .offer ul { margin: 12px 0 0 0; padding-left: 20px; font-size: 15px; }
+  .offer li { margin-bottom: 4px; }
+
+  .quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  blockquote { margin: 0; padding: 22px 24px; background: var(--surface); border: 1px solid var(--line); border-left: 6px solid var(--accent2); border-radius: var(--radius); }
+  blockquote p { margin: 0 0 10px 0; font-size: 20px; line-height: 1.4; font-style: italic; }
+  blockquote cite { font-family: "Courier New", Courier, monospace; font-size: 12px; font-style: normal; color: var(--muted); }
+
+  details { border-top: 1px solid var(--line); padding: 14px 0; max-width: 780px; }
+  details:last-of-type { border-bottom: 1px solid var(--line); }
+  summary { cursor: pointer; font-size: 19px; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+  summary::-webkit-details-marker { display: none; }
+  summary:after { content: "+"; font-family: "Courier New", monospace; color: var(--accent-ink); font-size: 22px; line-height: 1; }
+  details[open] summary:after { content: "\2212"; }
+  details p { margin: 10px 0 0 0; color: var(--muted); max-width: 64ch; }
+
+  .cta-band {
+    margin-top: 72px; padding: 36px; border-radius: 20px; border: 2px solid var(--ink);
+    background: var(--accent3); color: #000; box-shadow: 8px 8px 0 var(--ink);
+    display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap;
+  }
+  .cta-band h2 { font-size: clamp(24px, 3vw, 34px); max-width: 24ch; line-height: 1.15; }
+  .cta-band .btn, .cta-band .btn:visited { background: #000; color: #fff; border-color: #000; margin: 0; }
+
+  /* ---------- contact ---------- */
+  .bigmail { display: inline-block; font-size: clamp(28px, 5.6vw, 68px); line-height: 1.1; letter-spacing: -0.02em; margin: 6px 0 40px 0; word-break: break-word; }
+  .bigmail, .bigmail:visited { color: var(--ink); text-decoration-color: var(--accent); text-decoration-thickness: 3px; text-underline-offset: 8px; }
+  .bigmail:hover { color: var(--accent-ink); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+  .contact-grid h3 {
+    display: inline-block; font-family: "Courier New", Courier, monospace; font-size: 13px;
+    background: var(--accent3); color: var(--on-accent3); border: 1.5px solid var(--ink); border-radius: 4px;
+    padding: 2px 10px; margin: 0 0 14px 0;
+  }
+  .contact-grid h3.alt { background: var(--accent2); color: var(--on-accent2); }
+  .contact-grid p { margin: 0 0 12px 0; max-width: 52ch; }
+  form label { display: block; font-family: "Courier New", Courier, monospace; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+  form input, form textarea {
+    width: 100%; max-width: 480px; display: block; margin-bottom: 14px;
+    font-family: Georgia, serif; font-size: 16px; color: var(--ink);
+    background: var(--surface); border: 1.5px solid var(--ink); border-radius: 10px; padding: 10px 12px;
+  }
+  form button { font-family: Georgia, serif; font-size: 16px; cursor: pointer; border: 1.5px solid var(--accent); background: var(--accent); color: var(--on-accent); border-radius: 999px; padding: 11px 24px; }
+  form button:hover { box-shadow: 3px 3px 0 var(--ink); transform: translate(-2px,-2px); }
+  .form-note { font-family: "Courier New", monospace; font-size: 12px; color: var(--muted); margin-top: 8px; }
+
+  /* ---------- footer ---------- */
+  footer { margin-top: 90px; border-top: 1px solid var(--line); padding: 28px 0 40px 0; font-size: 14px; color: var(--muted); }
+  .foot-grid { display: flex; justify-content: space-between; gap: 28px; flex-wrap: wrap; align-items: flex-start; }
+  footer .mono { font-size: 12px; }
+  .counter { display: inline-flex; gap: 2px; margin-left: 6px; vertical-align: middle; }
+  .counter span { background: #000; color: #4dff4d; font-family: "Courier New", monospace; font-weight: bold; padding: 1px 5px; border: 1px solid #4dff4d; }
+  .badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
+  .b88 {
+    width: 88px; height: 31px; display: inline-flex; align-items: center; justify-content: center; text-align: center;
+    font: bold 9px/1.05 "Courier New", monospace; letter-spacing: .4px; text-transform: uppercase;
+    border: 2px outset #d0d0d0; image-rendering: pixelated;
+  }
+  .skin { display: flex; align-items: center; gap: 8px; }
+  .skin button { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--ink); cursor: pointer; padding: 0; }
+  .skin button[aria-pressed="true"] { box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px var(--ink); }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .page.active, .status .dot, .cursor { animation: none; }
+    .card, .btn, .logo, .press a, form button { transition: none; }
+  }
+
+  @media (max-width: 960px) {
+    .hero { grid-template-columns: 1fr; gap: 36px; }
+    .portrait-wrap { max-width: 300px; }
+    .grid-3, .how, .quotes, .two-col, .contact-grid, .press { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .contact-grid, .two-col { gap: 32px; }
+  }
+  @media (max-width: 560px) {
+    .wrap, .header-inner { padding-left: 18px; padding-right: 18px; }
+    .steps { grid-template-columns: 1fr; }
+    .cv .row { grid-template-columns: 1fr; gap: 2px; }
+    .cta-band { padding: 24px; }
+  }
+</style>
+</head>
+<body data-theme="purple">
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="#about" aria-label="Maren Osei, home">MO</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#about" data-nav="about">About</a></li>
+        <li class="has-menu">
+          <button type="button" class="menu-btn" aria-haspopup="true" aria-expanded="false" aria-controls="projects-menu">Projects <span class="chev" aria-hidden="true">&#9660;</span></button>
+          <ul class="submenu" id="projects-menu">
+            <li><a href="#audio" data-nav="audio">Audio<small>podcasts, series &amp; tours</small></a></li>
+            <li><a href="#events" data-nav="events">Events &amp; Engagement<small>exhibitions &amp; community programs</small></a></li>
+          </ul>
+        </li>
+        <li><a href="#hire" data-nav="hire">For Hire</a></li>
+        <li><a href="#contact" data-nav="contact" class="cta">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- =============== ABOUT =============== -->
+  <section class="page" id="page-about">
+    <div class="wrap">
+      <div class="hero">
+        <div>
+          <div class="status"><span class="dot"></span><span>now: producing season 3 of Open Studio Hours<span class="cursor">&#9612;</span></span></div>
+          <h1>Hi, I'm Maren. I make <em>podcasts</em>, exhibitions, and the occasional block party.</h1>
+          <p class="sub">I'm a curator and audio producer in Pittsburgh. For about twelve years I've helped museums, public media and neighborhood groups tell stories people actually want to show up for.</p>
+          <a class="btn" href="#audio">Listen to my work</a>
+          <a class="btn ghost" href="#events">Events &amp; engagement</a>
+          <a class="btn ghost" href="#hire">Work with me</a>
+        </div>
+        <div class="portrait-wrap">
+          <div class="portrait a10"><div class="cap">[ your photo goes here ]</div></div>
+          <div class="sticker">hello &#10042;</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-head"><h2 class="c-c">Featured work</h2></div>
+        <div class="grid-3">
+          <a class="card" href="#audio">
+            <div class="tile wide a6"><span class="chip">PODCAST</span><span class="new-tag">&#9733; NEW</span></div>
+            <div class="card-body">
+              <h3>Open Studio Hours</h3>
+              <p>Conversations with the people who make art happen.</p>
+              <div class="meta">2023&ndash;present &middot; host &amp; producer</div>
+            </div>
+          </a>
+          <a class="card" href="#audio">
+            <div class="tile wide a5"><span class="chip">BRANDED PODCAST</span></div>
+            <div class="card-body">
+              <h3>Inside the Warehouse</h3>
+              <p>A first podcast for a regional manufacturer, from kickoff to launch in 14 weeks.</p>
+              <div class="meta">2024 &middot; consultant &amp; executive producer</div>
+            </div>
+          </a>
+          <a class="card" href="#events">
+            <div class="tile wide a1"><span class="chip">EXHIBITION</span></div>
+            <div class="card-body">
+              <h3>Small Rooms, Big Ideas</h3>
+              <p>Eleven artists, apartment-sized work, one very full storefront.</p>
+              <div class="meta">2026 &middot; curator</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="section two-col">
+        <div>
+          <div class="section-head"><h2 class="c-a">A bit more about me</h2></div>
+          <div class="prose">
+            <p>I came up through museum curatorial departments, then spent the better part of a decade running community programs out of storefronts, church basements and the occasional bus stop. Somewhere along the way I started recording the conversations, and that turned into a second career in audio.</p>
+            <p>I'm curious about almost everything, which makes me a decent interviewer and a slightly exhausting dinner guest. I like small teams, plain language, honest budgets and clear next steps. When I don't know something, I'll say so, and then I'll find the person who does.</p>
+            <p>I live in Pittsburgh, work with teams everywhere, and am always happy to <a href="#contact">grab a coffee or a call</a>.</p>
+          </div>
+          <div class="tags">
+            <span>audio storytelling</span><span>podcast launch strategy</span><span>exhibition curation</span><span>community programming</span><span>grant writing</span><span>vendor &amp; budget management</span>
+          </div>
+        </div>
+        <div>
+          <div class="section-head"><h2 class="c-b">Experience</h2></div>
+          <div class="cv">
+            <div class="row"><div class="yr">2023&ndash;now</div><div class="what">Independent audio producer &amp; consultant<small>Podcasts for cultural organizations, public media partners and brands</small></div></div>
+            <div class="row"><div class="yr">2018&ndash;now</div><div class="what">Programs Director, Northside Open Studios<small>Annual neighborhood studio weekend, 60+ studios</small></div></div>
+            <div class="row"><div class="yr">2020&ndash;now</div><div class="what">Co-organizer, First Friday Gallery Crawl</div></div>
+            <div class="row"><div class="yr">2015&ndash;2018</div><div class="what">Assistant Curator, regional museum<small>Led reinstallation of two permanent collection galleries</small></div></div>
+            <div class="row"><div class="yr">Education</div><div class="what">MA Arts Administration &middot; BFA Painting</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-head"><h2 class="c-c">How I work</h2></div>
+        <div class="how">
+          <div><div class="glyph">&#9742;</div><h3>Listen first</h3><p>Most first calls are me asking questions. The best ideas are usually already in the room.</p></div>
+          <div><div class="glyph">&#9998;</div><h3>Keep it clear</h3><p>Plain-language plans, fixed-scope proposals, short weekly notes. No jargon, no surprises.</p></div>
+          <div><div class="glyph">&#9733;</div><h3>Share the credit</h3><p>Good work is a team sport. Your people, artists and collaborators belong in the spotlight.</p></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-head"><h2 class="c-a">In the press</h2></div>
+        <p class="section-note">A few kind words from people who wrote about the work. (Placeholders: swap in real coverage.)</p>
+        <div class="press">
+          <a href="#" data-placeholder><span class="meta">The Weekly Gallery &middot; 2025</span><span class="t">The curator taking shows to the storefronts</span></a>
+          <a href="#" data-placeholder><span class="meta">Audio Dispatch &middot; 2024</span><span class="t">Podcast of the month: Open Studio Hours</span></a>
+          <a href="#" data-placeholder><span class="meta">Pittsburgh Arts Review &middot; 2023</span><span class="t">How Northside Open Studios got to 60 doors</span></a>
+          <a href="#" data-placeholder><span class="meta">Small Rooms Journal &middot; 2021</span><span class="t">What matters to Maren Osei</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== AUDIO =============== -->
+  <section class="page" id="page-audio">
+    <div class="wrap">
+      <p class="eyebrow">audio</p>
+      <h1>Things worth <em>listening</em> to.</h1>
+      <p class="sub">Podcasts, audio series and tours, plus a few first shows I helped other teams get off the ground.</p>
+
+      <div class="filters" role="group" aria-label="Filter audio projects" data-target="audio-grid">
+        <button type="button" data-filter="all" aria-pressed="true">all</button>
+        <button type="button" data-filter="podcast" aria-pressed="false">shows</button>
+        <button type="button" data-filter="series" aria-pressed="false">series &amp; tours</button>
+        <button type="button" data-filter="consulting" aria-pressed="false">consulting</button>
+        <span class="count"></span>
+      </div>
+
+      <!-- Replace each .tile's pattern class with an <img> (styled to fill the tile) when you have real photos. -->
+      <div class="grid-projects" id="audio-grid">
+        <a class="card" data-cat="podcast" href="#" data-placeholder>
+          <div class="tile a6"><span class="chip">S3</span><span class="new-tag">&#9733; NEW</span></div>
+          <div class="card-body"><h3>Open Studio Hours</h3><p>Conversations with the people who make art happen.</p><div class="meta">2023&ndash;present &middot; host &amp; producer</div></div>
+        </a>
+        <a class="card" data-cat="podcast consulting" href="#" data-placeholder>
+          <div class="tile a5"><span class="chip">BRANDED</span></div>
+          <div class="card-body"><h3>Inside the Warehouse</h3><p>A first branded podcast, from kickoff meeting to launch in 14 weeks.</p><div class="meta">2024 &middot; consultant &amp; exec producer</div></div>
+        </a>
+        <a class="card" data-cat="podcast consulting" href="#" data-placeholder>
+          <div class="tile a2"><span class="chip">NONPROFIT</span></div>
+          <div class="card-body"><h3>Voices of the Valley</h3><p>A donor-stories podcast, planned in a three-week strategy sprint.</p><div class="meta">2025 &middot; strategy consultant</div></div>
+        </a>
+        <a class="card" data-cat="series" href="#" data-placeholder>
+          <div class="tile a3"><span class="chip">AUDIO SERIES</span></div>
+          <div class="card-body"><h3>Neighborhood Frequencies</h3><p>Community audio stories, made with a public radio partner.</p><div class="meta">2022 &middot; series producer</div></div>
+        </a>
+        <a class="card" data-cat="series" href="#" data-placeholder>
+          <div class="tile a7"><span class="chip">AUDIO TOUR</span></div>
+          <div class="card-body"><h3>Walking &amp; Looking</h3><p>An audio companion to a show with no gallery and no wall text.</p><div class="meta">2021 &middot; writer &amp; producer</div></div>
+        </a>
+        <a class="card" data-cat="series" href="#" data-placeholder>
+          <div class="tile a8"><span class="chip">MINI-SERIES</span></div>
+          <div class="card-body"><h3>Studio Visits</h3><p>Five-minute audio postcards from artists' studios.</p><div class="meta">2022 &middot; producer</div></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== EVENTS & ENGAGEMENT =============== -->
+  <section class="page" id="page-events">
+    <div class="wrap">
+      <p class="eyebrow">events &amp; engagement</p>
+      <h1>Rooms, streets and <em>gatherings.</em></h1>
+      <p class="sub">Exhibitions, neighborhood programs and live events that bring new people through the door.</p>
+
+      <div class="filters" role="group" aria-label="Filter events and engagement projects" data-target="events-grid">
+        <button type="button" data-filter="all" aria-pressed="true">all</button>
+        <button type="button" data-filter="exhibition" aria-pressed="false">exhibitions</button>
+        <button type="button" data-filter="community" aria-pressed="false">community programs</button>
+        <span class="count"></span>
+      </div>
+
+      <div class="grid-projects" id="events-grid">
+        <a class="card" data-cat="exhibition" href="#" data-placeholder>
+          <div class="tile a1"><span class="chip">ON VIEW</span><span class="new-tag">&#9733; NEW</span></div>
+          <div class="card-body"><h3>Small Rooms, Big Ideas</h3><p>Eleven artists, apartment-sized work, one very full storefront.</p><div class="meta">2026 &middot; curator</div></div>
+        </a>
+        <a class="card" data-cat="exhibition" href="#" data-placeholder>
+          <div class="tile a4"><span class="chip">WALKING SHOW</span></div>
+          <div class="card-body"><h3>Ghost Signs</h3><p>Photography and new work in the windows of vacant storefronts.</p><div class="meta">2021 &middot; curator</div></div>
+        </a>
+        <a class="card" data-cat="exhibition" href="#" data-placeholder>
+          <div class="tile a9"><span class="chip">MUSEUM</span></div>
+          <div class="card-body"><h3>Permanent Collection Rehang</h3><p>Two galleries reinstalled, with living artists in the conversation.</p><div class="meta">2015&ndash;2018 &middot; assistant curator</div></div>
+        </a>
+        <a class="card" data-cat="community" href="#" data-placeholder>
+          <div class="tile a2"><span class="chip">ANNUAL</span></div>
+          <div class="card-body"><h3>Northside Open Studios</h3><p>From 12 artists in a church basement to 60+ studios.</p><div class="meta">2018&ndash;present &middot; programs director</div></div>
+        </a>
+        <a class="card" data-cat="community" href="#" data-placeholder>
+          <div class="tile a8"><span class="chip">MONTHLY</span></div>
+          <div class="card-body"><h3>First Friday Gallery Crawl</h3><p>Six small galleries, one map, one shared closing time.</p><div class="meta">2020&ndash;present &middot; co-organizer</div></div>
+        </a>
+        <a class="card" data-cat="community" href="#" data-placeholder>
+          <div class="tile a10"><span class="chip">LIVE</span></div>
+          <div class="card-body"><h3>Listening Party Nights</h3><p>Live podcast recordings in galleries, with snacks.</p><div class="meta">2024 &middot; producer</div></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== FOR HIRE =============== -->
+  <section class="page" id="page-hire">
+    <div class="wrap">
+      <p class="eyebrow">for hire</p>
+      <h1>Let's make something <em>worth showing up for.</em></h1>
+      <p class="sub">I take on a handful of projects a year: first podcasts, audio series, exhibitions and community programs. Most start with a conversation, no pitch deck required.</p>
+      <a class="btn" href="#contact">Start a conversation</a>
+
+      <div class="section">
+        <div class="section-head"><h2 class="c-c">What I do</h2></div>
+        <div class="two-col" style="gap:20px;">
+          <div class="offer">
+            <h3>Podcast consulting &amp; production</h3>
+            <span class="meta">for brands, nonprofits and public media</span>
+            <p>Strategy, format and production for teams making their first show, or rethinking their tenth.</p>
+            <ul><li>Strategy and format development</li><li>Hiring and managing hosts, editors and sound designers</li><li>Launch planning and season-two debriefs</li></ul>
+          </div>
+          <div class="offer">
+            <h3>Curation &amp; community programming</h3>
+            <span class="meta">for museums, galleries and neighborhood groups</span>
+            <p>Exhibitions and recurring programs that bring in people who don't usually walk through the door.</p>
+            <ul><li>Exhibition concept, artist selection and install</li><li>Open studios, workshops and live events</li><li>Interpretation, grant and report writing</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-head"><h2 class="c-a">Your first podcast, step by step</h2></div>
+        <p class="section-note">If you've never made a show before, here's roughly how it goes. I'll keep you posted at every stage and flag decisions that are yours to make.</p>
+        <div class="steps">
+          <div class="step"><div class="n">01</div><h3>Discover</h3><p>We start with goals and audience. Sometimes the honest answer is that a podcast isn't the right move, and I'll tell you if so.</p></div>
+          <div class="step"><div class="n">02</div><h3>Design</h3><p>Format, name, hosts, budget and team, in a plain-language plan with real numbers.</p></div>
+          <div class="step"><div class="n">03</div><h3>Produce</h3><p>I bring in and manage the right collaborators and keep the schedule moving. You approve at clear checkpoints.</p></div>
+          <div class="step"><div class="n">04</div><h3>Launch &amp; learn</h3><p>Trailer, distribution, a measurement plan that goes beyond downloads, and a debrief on what to change for next season.</p></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-head"><h2 class="c-b">Ways to work together</h2></div>
+        <div class="grid-3">
+          <div class="offer"><h3>Strategy sprint</h3><span class="meta">2&ndash;3 weeks</span><p>A clear recommendation: format, budget, timeline and who you'll need on the team.</p></div>
+          <div class="offer"><h3>Launch partner</h3><span class="meta">3&ndash;6 months</span><p>From plan to published, with me as your producer-in-residence.</p></div>
+          <div class="offer"><h3>Producer on call</h3><span class="meta">monthly</span><p>Steady guidance for teams already making a show and wanting a second set of ears.</p></div>
+        </div>
+        <p class="section-note" style="margin-top:16px;">Everything is scoped per project with a fixed-fee proposal. Small budgets and public-media timelines are welcome.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-head"><h2 class="c-c">Kind words</h2></div>
+        <div class="quotes">
+          <blockquote><p>&ldquo;Maren asked better questions in our first hour than we'd asked in six months.&rdquo;</p><cite>&mdash; Marketing Director, regional manufacturer</cite></blockquote>
+          <blockquote><p>&ldquo;Calm, organized, and never made us feel behind. We launched right on schedule.&rdquo;</p><cite>&mdash; Executive Director, arts nonprofit</cite></blockquote>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-head"><h2 class="c-a">Good questions</h2></div>
+        <details><summary>Do you work with small budgets?</summary><p>Yes. I'll tell you what's realistic, where to spend and where to save, and I'd rather scope something smaller and good than bigger and strained.</p></details>
+        <details><summary>Can you work with our agency or in-house team?</summary><p>Absolutely. I'm happy to slot in alongside your people, whether that means leading, supporting, or just being a thought partner.</p></details>
+        <details><summary>How soon can we start?</summary><p>I'm booking projects for January 2027, and a couple of short strategy sprints are possible this fall.</p></details>
+      </div>
+
+      <div class="cta-band">
+        <h2>Have a project in mind, or just a half-formed idea?</h2>
+        <a class="btn" href="#contact">Say hello</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== CONTACT =============== -->
+  <section class="page" id="page-contact">
+    <div class="wrap">
+      <p class="eyebrow">contact</p>
+      <h1>Say <em>hello.</em></h1>
+      <a class="bigmail" href="mailto:hello@marenosei.com">hello@marenosei.com</a>
+
+      <div class="contact-grid">
+        <div>
+          <h3>what helps</h3>
+          <p>Tell me what you're working on, who it's for, and roughly when you need it. Rough is fine. Half the fun is figuring out the rest together.</p>
+          <p>I reply to every email, usually within a few business days. If it's urgent, say so in the subject line.</p>
+          <h3 class="alt" style="margin-top:28px;">elsewhere</h3>
+          <p>Pittsburgh, PA &middot; open to travel &middot; remote-friendly<br>
+          <a href="#" data-placeholder>LinkedIn</a> &middot; <a href="#" data-placeholder>Instagram</a> &middot; <a href="#" data-placeholder>Newsletter</a></p>
+        </div>
+        <div>
+          <h3>or send a note from here</h3>
+          <form id="contact-form">
+            <label for="f-name">your name</label>
+            <input id="f-name" type="text" required>
+            <label for="f-email">your email</label>
+            <input id="f-email" type="email" required>
+            <label for="f-msg">what are you working on?</label>
+            <textarea id="f-msg" rows="5" required></textarea>
+            <button type="submit">Send message</button>
+            <div class="form-note">opens your email app with everything filled in.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        &copy; 2026 Maren Osei<br>
+        <span class="mono">last updated nov 2026</span>
+        <div class="badges">
+          <span class="b88" style="background:#000;color:#4dff4d;">no cookies</span>
+          <span class="b88" style="background:#5a2be2;color:#fff;">public media &hearts;</span>
+          <span class="b88" style="background:#fff;color:#c00;">best viewed open-minded</span>
+        </div>
+      </div>
+      <div>
+        <div class="mono">visitor no.
+          <span class="counter"><span>0</span><span>0</span><span>4</span><span>2</span><span>1</span><span>7</span></span>
+        </div>
+      </div>
+      <div class="skin" role="group" aria-label="Choose a color skin">
+        <span class="mono">skin:</span>
+        <button type="button" data-theme="purple" aria-pressed="true" aria-label="Gallery purple" title="gallery purple" style="background:linear-gradient(135deg,#6a2cff 50%,#ff3d9a 50%)"></button>
+        <button type="button" data-theme="aqua" aria-pressed="false" aria-label="Y2K aqua" title="y2k aqua" style="background:linear-gradient(135deg,#0086b3 50%,#ff5a1f 50%)"></button>
+        <button type="button" data-theme="pittsburgh" aria-pressed="false" aria-label="Pittsburgh black and yellow" title="pittsburgh" style="background:linear-gradient(135deg,#ffb612 50%,#141414 50%)"></button>
+        <button type="button" data-theme="zine" aria-pressed="false" aria-label="Zine neon" title="zine neon" style="background:linear-gradient(135deg,#b6ff3b 50%,#ff2e93 50%)"></button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ---- Projects drop-down ---- */
+  var menuLi = document.querySelector('.has-menu');
+  var menuBtn = menuLi.querySelector('.menu-btn');
+  var canHover = window.matchMedia('(hover: hover)').matches;
+  function setMenu(open) {
+    menuLi.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  menuBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    if (canHover && e.detail > 0) return; /* mouse users get hover; keyboard (detail 0) and touch toggle */
+    setMenu(!menuLi.classList.contains('open'));
+  });
+  menuLi.addEventListener('mouseenter', function () { if (canHover) setMenu(true); });
+  menuLi.addEventListener('mouseleave', function () { if (canHover) setMenu(false); });
+  document.addEventListener('click', function (e) { if (!menuLi.contains(e.target)) setMenu(false); });
+  menuLi.querySelectorAll('.submenu a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+  menuLi.addEventListener('focusout', function (e) { if (e.relatedTarget && !menuLi.contains(e.relatedTarget)) setMenu(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { setMenu(false); menuBtn.blur(); } });
+
+  /* ---- page routing via #hash so back button and shared links work ---- */
+  var PAGES = ['about', 'audio', 'events', 'hire', 'contact'];
+  var lastPage = null;
+  function route() {
+    var h = (location.hash || '#about').slice(1);
+    if (h === 'projects') h = 'audio'; /* old links */
+    if (PAGES.indexOf(h) < 0) h = 'about';
+    document.querySelectorAll('.page').forEach(function (p) { p.classList.toggle('active', p.id === 'page-' + h); });
+    document.querySelectorAll('[data-nav]').forEach(function (a) {
+      if (a.getAttribute('data-nav') === h) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+    menuBtn.classList.toggle('is-current', h === 'audio' || h === 'events');
+    setMenu(false);
+    document.title = 'maren osei \u2014 ~/' + h;
+    if (lastPage !== null && lastPage !== h) {
+      window.scrollTo(0, 0);
+      var pg = document.getElementById('page-' + h);
+      pg.setAttribute('tabindex', '-1');
+      pg.focus({ preventScroll: true });
+    }
+    lastPage = h;
+  }
+  window.addEventListener('hashchange', route);
+  route();
+
+  /* placeholder links shouldn't jump anywhere */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('[data-placeholder]');
+    if (a) e.preventDefault();
+  });
+
+  /* ---- filters (one set per page) ---- */
+  document.querySelectorAll('.filters').forEach(function (group) {
+    var grid = document.getElementById(group.getAttribute('data-target'));
+    var cards = grid.querySelectorAll('.card');
+    var btns = group.querySelectorAll('button');
+    var count = group.querySelector('.count');
+    function apply(f) {
+      var shown = 0;
+      cards.forEach(function (c) {
+        var ok = f === 'all' || c.getAttribute('data-cat').split(' ').indexOf(f) > -1;
+        c.hidden = !ok;
+        if (ok) shown++;
+      });
+      count.textContent = 'showing ' + shown + ' of ' + cards.length;
+    }
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        btns.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        apply(b.getAttribute('data-filter'));
+      });
+    });
+    apply('all');
+  });
+
+  /* ---- contact form: builds an email in the visitor's mail app ---- */
+  document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var n = document.getElementById('f-name').value;
+    var em = document.getElementById('f-email').value;
+    var m = document.getElementById('f-msg').value;
+    var body = m + '\n\n\u2014 ' + n + ' (' + em + ')';
+    window.location.href = 'mailto:hello@marenosei.com?subject=' + encodeURIComponent('Hello from ' + n) + '&body=' + encodeURIComponent(body);
+  });
+
+  /* ---- color skins ---- */
+  var skins = document.querySelectorAll('.skin button');
+  skins.forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.body.setAttribute('data-theme', b.getAttribute('data-theme'));
+      skins.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+    });
+  });
+</script>
+</body>
+</html>
